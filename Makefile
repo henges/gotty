@@ -12,6 +12,9 @@ endif
 
 export CGO_ENABLED=0
 
+gotty-no-frontend: main.go server/*.go webtty/*.go backend/*.go Makefile
+	go build ${BUILD_OPTIONS}
+
 gotty: main.go assets server/*.go webtty/*.go backend/*.go Makefile
 	go build ${BUILD_OPTIONS}
 
